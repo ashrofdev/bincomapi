@@ -4,20 +4,20 @@ const knex = require('knex')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-// const db = knex({
-//     client: 'pg',
-//     connection: {
-//       connectionString : process.env.DATABASE_URL,
-//       ssl: true
-//     }
-// })
 const db = knex({
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
-      database: 'test'
+      connectionString : process.env.DATABASE_URL,
+      ssl: true
     }
 })
+// const db = knex({
+//     client: 'pg',
+//     connection: {
+//       host: '127.0.0.1',
+//       database: 'test'
+//     }
+// })
 
 const app = express()
 app.use(bodyParser.json())
